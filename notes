@@ -5,9 +5,19 @@ mount ssh dir and set GIT_SSH_COMMAND envvar: -v ~/.ssh:/ssh -e GIT_SSH_COMMAND=
 -e EMAIL=email
 
 
+open question:
+  can we mount the ssh key and repo dir on windows
+  does interactivity in scripts work on windows?
+    - maybe they can't run the monorepo command at all? (do they have the monorepo and can the contribute to it? does it live at ~/code?)
+      - maybe we have a flag that skips this and they need to bug an engineer if they are launching markets themselves?
+      - or buildkite does this???
+  what command tool are ACTs going to use??? Powershell? the other ones?
+  git config --get on windows? does it work?
+
 wrapper script:
   - docker build
-  - docker run 
+  - docker run `
 
+docker run -v $(pwd):/app -v ~/.ssh:/ssh -e EMAIL=$(git config --get user.email) -e GIT_AUTHOR_NAME="$(git config --get user.name)" -it foo bash
 
 
