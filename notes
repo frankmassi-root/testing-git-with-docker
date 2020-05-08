@@ -1,0 +1,13 @@
+mount ssh dir and set GIT_SSH_COMMAND envvar: -v ~/.ssh:/ssh -e GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /ssh/id_rsa"
+  - will this work in windows? Maybe with docker-compose???
+
+-e GIT_AUTHOR_NAME="name"
+-e EMAIL=email
+
+
+wrapper script:
+  - docker build
+  - docker run 
+
+
+
