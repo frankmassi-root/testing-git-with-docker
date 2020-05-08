@@ -15,4 +15,13 @@ puts "Running with '#{options[:message]}'"
 g = Git.open(Dir.getwd)
 g.add
 g.commit(options[:message])
-g.push
+
+puts "Commit I just made:"
+puts g.show
+
+puts "proceed? (y/n)"
+proceed = STDIN.gets.chomp.downcase == "y"
+
+if proceed
+  g.push
+end

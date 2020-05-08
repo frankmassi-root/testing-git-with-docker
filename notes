@@ -20,4 +20,5 @@ wrapper script:
 
 docker run -v $(pwd):/app -v ~/.ssh:/ssh -e EMAIL=$(git config --get user.email) -e GIT_AUTHOR_NAME="$(git config --get user.name)" -it foo bash
 
-
+windows syntax!
+docker run -v ${PWD}:/app -v ~/.ssh:/ssh -e EMAIL=$(git config --get user.email) -e GIT_AUTHOR_NAME="$(git config --get user.name)" -it foo bash
