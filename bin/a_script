@@ -14,6 +14,5 @@ end.parse!
 puts "Running with '#{options[:message]}'"
 g = Git.open(Dir.getwd)
 g.add
-File.write("a_file", options[:message])
 g.commit(options[:message])
 g.push
